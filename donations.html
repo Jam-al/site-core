@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE - Donations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <div class="content">
+        <header>
+            <a href="index.html"><img src="image-site-core/logo/logo-core.png" alt="Logo de CORE" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+		    <li><a href="musique.html">Musique</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="concerts.html">Concerts</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Donations</h1>
+            <p>Oups, cet onglet n'est pas encore disponible.</p>
+        </main>
+    </div>
+    <section class="newsletter">
+      <h2>Inscris-toi à la newsletter</h2>
+      <form id="newsletter-form">
+        <input type="email" name="email" id="email" placeholder="Ton adresse e-mail" required>
+        <button type="submit">S'inscrire</button>
+        <p id="newsletter-msg"></p>
+      </form>
+    </section>
+    <footer>
+        <div class="footer-left">
+            <p>&copy; 2025 CORE. Tous droits réservés.</p>
+        </div>
+	<div class="footer-center">
+    		<a href="https://instagram.com" target="_blank"><img src="image-site-core/icons/logo-insta-blanc.png" alt="Instagram" class="social-icon instagram"></a>
+   		<a href="https://twitter.com" target="_blank"><img src="image-site-core/icons/logo-twitter-blanc.png" alt="Twitter" class="social-icon twitter"></a>
+    		<a href="https://facebook.com" target="_blank"><img src="image-site-core/icons/logo-facebook-blanc.png" alt="Facebook" class="social-icon facebook"></a>
+    		<a href="https://youtube.com" target="_blank"><img src="image-site-core/icons/logo-youtube-blanc.png" alt="YouTube" class="social-icon youtube"></a>
+		<a href="https://discord.gg/3RkhBAC5a6" target="_blank"><img src="image-site-core/icons/logo-discord-blanc.png" alt="Discord" class="social-icon discord"></a>
+    </footer>
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value;
+
+  fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
+    method: 'POST',
+    body: new URLSearchParams({ email })
+  })
+  .then(response => response.text())
+  .then(result => {
+    document.getElementById('newsletter-msg').textContent = "Merci pour ton inscription !";
+    form.reset();
+  })
+  .catch(error => {
+    document.getElementById('newsletter-msg').textContent = "Une erreur est survenue. Réessaie plus tard.";
+  });
+});
+</script>
+</body>
+</html>
