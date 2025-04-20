@@ -105,6 +105,9 @@ footer {
 .discord:hover {
     content: url("image-site-core/icons/logo-discord-noir.png");
 }
+.tiktok:hover {
+    content: url("image-site-core/icons/logo-tiktok-noir.png");
+}
 .gallery {
     padding: 40px 20px;
     text-align: center;
