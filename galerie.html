@@ -91,6 +91,19 @@
 <!-- Lightbox2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 <script>
+// --- Animation au scroll (fade-in fluide) ---
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => observer.observe(el));
+
 document.getElementById('newsletter-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = e.target;
@@ -109,20 +122,6 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     document.getElementById('newsletter-msg').textContent = "Une erreur est survenue. Réessaie plus tard.";
   });
 });
-</script>
-	<script>
-// --- Animation au scroll (fade-in fluide) ---
-const fadeElements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-fadeElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
