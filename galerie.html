@@ -67,7 +67,7 @@
       })();
     </script>
 
-    <section class="newsletter">
+    <section class="newsletter fade-in">
       <h2>Inscris-toi à la newsletter</h2>
       <form id="newsletter-form">
         <input type="email" name="email" id="email" placeholder="Ton adresse e-mail" required>
@@ -75,7 +75,7 @@
         <p id="newsletter-msg"></p>
       </form>
     </section>
-    <footer>
+    <footer class="fade-in">
         <div class="footer-left">
             <p>&copy; 2025 C⨁RE. Tous droits réservés.</p>
         </div>
@@ -88,14 +88,7 @@
 		<a href="https://www.tiktok.com/@core_musique?_t=ZN-8vhSBmUMGJu&_r=1" target="_blank"><img src="image-site-core/icons/logo-tiktok-blanc.png" alt="TikTok" class="social-icon tiktok"></a>
 	</div>
     </footer>
-<!-- Lightbox2 JS -->
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 <script>
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value;
-
   fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
     method: 'POST',
     body: new URLSearchParams({ email })
@@ -124,5 +117,6 @@ const observer = new IntersectionObserver(entries => {
 
 fadeElements.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
