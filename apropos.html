@@ -68,18 +68,18 @@
 	</div>
     </footer>
 <script>
-  // Animation au scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.2 });
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value;
+// --- Animation au scroll (fade-in fluide) ---
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => observer.observe(el));
 
   fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
     method: 'POST',
