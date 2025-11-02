@@ -29,6 +29,14 @@
             <p>Oups, cet onglet n'est pas encore disponible.</p>
         </main>
     </div>
+
+    <script>
+      (function(){
+        const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }); }, {threshold:0.18});
+        document.querySelectorAll('header, main, footer, .newsletter').forEach(el=>{ if(el) io.observe(el); });
+      })();
+    </script>
+
     <section class="newsletter">
       <h2>Inscris-toi à la newsletter</h2>
       <form id="newsletter-form">
@@ -39,7 +47,7 @@
     </section>
     <footer>
         <div class="footer-left">
-            <p>&copy; 2025 CORE. Tous droits réservés.</p>
+            <p>&copy; 2025 C⨁RE. Tous droits réservés.</p>
         </div>
 	<div class="footer-center">
     		<a href="https://www.instagram.com/core.musique/" target="_blank"><img src="image-site-core/icons/logo-insta-blanc.png" alt="Instagram" class="social-icon instagram"></a>
