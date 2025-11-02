@@ -1,223 +1,196 @@
+/* style.css - version corrigée pour CORE
+   - padding latéral 40px pour tout le contenu
+   - images limitées dans musique & galerie
+   - animations au scroll discrètes
+   - conserve l'esthétique sombre d'origine
+*/
+
+/* Reset / général */
+* { box-sizing: border-box; }
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
-header {
-  text-align: center;
-  padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+/* Conteneur principal : laisse 40px de marge de chaque côté */
+.content {
+    flex: 1;
+    padding: 0 40px; /* <-- espace latéral demandé */
 }
 
+/* Header / nav / main - conterner centré */
+header, nav, main {
+    padding: 20px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Logo */
 .logo {
-  max-height: 160px;
-  margin: 0 auto 15px;
-  display: block;
-  transition: transform 0.4s ease;
+    max-height: 180px;
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.35s ease;
 }
+.logo:hover { transform: scale(1.03); }
 
-.logo:hover {
-  transform: scale(1.05);
-}
-
+/* Navigation */
 nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 0;
 }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease, transform 0.2s ease;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
+nav ul li a:hover { text-decoration: underline; }
 
-nav a:hover {
-  color: #E50914;
-  transform: scale(1.05);
-}
-
-/* Release Section */
+/* Release / main content */
 .release {
-  text-align: center;
-  margin: 60px 0;
-  animation: fadeUp 1s ease forwards;
+    text-align: center;
+    margin: 40px 0;
 }
 
-.release h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
+/* Cover image */
 .cover {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(255,255,255,0.1);
-  transition: transform 0.5s ease;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.cover:hover {
-  transform: scale(1.05);
-}
-
+/* Bouton outnow */
 .outnow a {
-  color: #E50914;
-  text-decoration: none;
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 2px;
-  display: inline-block;
-  margin-top: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.outnow a:hover {
-  color: #ff4d4d;
-  transform: scale(1.05);
-}
-
-/* Newsletter */
-.newsletter {
-  background: linear-gradient(180deg, #111, #000);
-  padding: 60px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.newsletter h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-#newsletter-form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#newsletter-form input {
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-}
-
-#newsletter-form button {
-  padding: 12px;
-  background-color: #E50914;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#newsletter-form button:hover {
-  background-color: #b0070f;
-}
-
-#newsletter-msg {
-  margin-top: 10px;
-  font-size: 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 2.2em;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
-  color: #aaa;
-  padding: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #333;
+    background-color: #111;
+    color: #aaa;
+    padding: 20px 40px;
+    font-size: 0.9em;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
+.footer-left { text-align: left; flex: 1; min-width: 200px; }
+.footer-center { text-align: center; flex: 1; min-width: 200px; }
 
-.footer-left {
-  flex: 1;
-  text-align: left;
-  min-width: 200px;
-}
-
-.footer-center {
-  flex: 1;
-  text-align: center;
-  min-width: 200px;
-}
-
+/* Social icons */
 .social-icon {
-  width: 40px;
-  margin: 0 6px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: brightness(0.9);
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.social-icon:hover { transform: scale(1.15); filter: brightness(1.2); }
+
+/* Gallery grid (original) - conserve ton grid */
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.social-icon:hover {
-  transform: scale(1.2);
-  filter: brightness(1.2);
+/* Album grid */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-/* Animations au scroll */
+/* IMAGE HANDLING (important) */
+/* Limitation générale : aucune image ne dépassera 100% du conteneur. */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SPECIFIQUE : éviter que les images de la galerie et de la musique deviennent énormes */
+/* garde chemins et noms d'images tels que tu as fournis */
+.album-grid img,
+.gallery-grid img,
+.gallery img,
+.album-grid a img {
+  max-width: 90%;      /* n'occupera pas plus de 90% de la colonne */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+/* Hover léger */
+.album-grid img:hover,
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: #111;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+.newsletter h2 { font-size: 2em; margin-bottom: 20px; }
+#newsletter-form { max-width: 400px; margin: auto; display:flex; flex-direction:column; gap:10px; }
+#newsletter-form input { padding:12px; font-size:16px; border-radius:6px; border:none; outline:none; }
+#newsletter-form button { padding:12px; font-size:16px; background:#E50914; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+#newsletter-form button:hover { background:#b5070f; }
+#newsletter-msg { margin-top:10px; font-size:14px; color:#ddd; }
+
+/* Concert list */
+.concert-list { list-style: none; padding-left: 0; }
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .outnow a { font-size: 1.6rem; }
+  .logo { max-height: 120px; }
+  .content { padding: 0 18px; } /* moins d'espace sur petit écran */
+}
+
+/* ===== Animations au scroll (fade-in / fade-up) ===== */
 .fade-up, .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-
-.fade-in {
-  transform: translateY(0);
-  transition: opacity 1s ease;
-}
-
 .show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Media Queries */
-@media (max-width: 600px) {
-  .outnow a {
-    font-size: 1.5em;
-  }
+/* petites améliorations visuelles */
+h1 { letter-spacing: 1px; }
+h2 { color: #ddd; margin-top: 8px; }
 
-  nav ul {
-    gap: 12px;
-  }
-
-  .logo {
-    max-height: 120px;
-  }
-}
-
-/* Keyframes */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* laisse la possibilité d'override par ton ancien css si besoin */
