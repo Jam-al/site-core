@@ -1,69 +1,68 @@
-/* style.css - version corrigée pour CORE
-   - padding latéral 40px pour tout le contenu
-   - images limitées dans musique & galerie
-   - animations au scroll discrètes
-   - conserve l'esthétique sombre d'origine
-*/
-
-/* Reset / général */
-* { box-sizing: border-box; }
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Conteneur principal : laisse 40px de marge de chaque côté */
 .content {
     flex: 1;
-    padding: 0 40px; /* <-- espace latéral demandé */
 }
 
-/* Header / nav / main - conterner centré */
-header, nav, main {
-    padding: 20px 0;
-    max-width: 1100px;
-    margin: 0 auto;
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Logo */
+/* --- MARGE LATÉRALE GLOBALE --- */
+main, section, .content {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* --- LOGO ET HEADER --- */
 .logo {
-    max-height: 180px;
+    max-height: 200px;
     display: block;
-    margin: 0 auto 10px;
-    transition: transform 0.35s ease;
+    margin: auto;
 }
-.logo:hover { transform: scale(1.03); }
 
-/* Navigation */
+header, nav, main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
-    margin: 0;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
-nav ul li a:hover { text-decoration: underline; }
 
-/* Release / main content */
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* --- SECTIONS DE CONTENU --- */
 .release {
     text-align: center;
     margin: 40px 0;
 }
 
-/* Cover image */
+/* --- IMAGES --- */
 .cover {
     max-width: 500px;
     width: 100%;
@@ -72,43 +71,128 @@ nav ul li a:hover { text-decoration: underline; }
     margin: 0 auto;
 }
 
-/* Bouton outnow */
+.album-grid img,
+.gallery-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+    margin: auto;
+}
+
+.album-grid img {
+    max-height: 300px;
+}
+
+.gallery-grid img {
+    max-height: 350px;
+}
+
+/* --- BOUTONS ET LIENS --- */
 .outnow a {
     color: white;
     text-decoration: none;
-    font-size: 2.2em;
+    font-size: 2.5em;
+    transition: color 0.3s ease;
 }
 
-/* Footer */
+.outnow a:hover {
+    text-decoration: underline;
+}
+
+/* --- FOOTER --- */
 footer {
-    background-color: #111;
+    background-color: #222;
     color: #aaa;
-    padding: 20px 40px;
+    padding: 20px;
     font-size: 0.9em;
     margin-top: 60px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #444;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-.footer-left { text-align: left; flex: 1; min-width: 200px; }
-.footer-center { text-align: center; flex: 1; min-width: 200px; }
 
-/* Social icons */
-.social-icon {
-    width: 45px;
-    height: 45px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+.footer-left {
+    text-align: left;
+    flex: 1;
 }
-.social-icon:hover { transform: scale(1.15); filter: brightness(1.2); }
 
-/* Gallery grid (original) - conserve ton grid */
-.gallery {
+.footer-center {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Changement d'image au hover */
+.instagram:hover { content: url("image-site-core/icons/logo-insta-noir.png"); }
+.twitter:hover { content: url("image-site-core/icons/logo-twitter-noir.png"); }
+.facebook:hover { content: url("image-site-core/icons/logo-facebook-noir.png"); }
+.youtube:hover { content: url("image-site-core/icons/logo-youtube-noir.png"); }
+.discord:hover { content: url("image-site-core/icons/logo-discord-noir.png"); }
+.tiktok:hover { content: url("image-site-core/icons/logo-tiktok-noir.png"); }
+
+/* --- NEWSLETTER --- */
+.newsletter {
+    background-color: #111;
     padding: 40px 20px;
     text-align: center;
     color: white;
 }
+
+.newsletter h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#newsletter-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#newsletter-form input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+#newsletter-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #E50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#newsletter-form button:hover {
+    background-color: #c40812;
+}
+
+#newsletter-msg {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* --- GRILLES --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -116,81 +200,47 @@ footer {
     margin-top: 20px;
 }
 
-/* Album grid */
 .album-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-/* IMAGE HANDLING (important) */
-/* Limitation générale : aucune image ne dépassera 100% du conteneur. */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.album-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* SPECIFIQUE : éviter que les images de la galerie et de la musique deviennent énormes */
-/* garde chemins et noms d'images tels que tu as fournis */
-.album-grid img,
-.gallery-grid img,
-.gallery img,
-.album-grid a img {
-  max-width: 90%;      /* n'occupera pas plus de 90% de la colonne */
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+.album-grid a:hover img {
+    transform: scale(1.05);
 }
 
-/* Hover léger */
-.album-grid img:hover,
-.gallery-grid img:hover {
-  transform: scale(1.03);
+/* --- ANIMATIONS AU SCROLL --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
 }
 
-/* Newsletter */
-.newsletter {
-  background-color: #111;
-  padding: 40px 20px;
-  text-align: center;
-  color: white;
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-.newsletter h2 { font-size: 2em; margin-bottom: 20px; }
-#newsletter-form { max-width: 400px; margin: auto; display:flex; flex-direction:column; gap:10px; }
-#newsletter-form input { padding:12px; font-size:16px; border-radius:6px; border:none; outline:none; }
-#newsletter-form button { padding:12px; font-size:16px; background:#E50914; color:#fff; border:none; border-radius:6px; cursor:pointer; }
-#newsletter-form button:hover { background:#b5070f; }
-#newsletter-msg { margin-top:10px; font-size:14px; color:#ddd; }
 
-/* Concert list */
-.concert-list { list-style: none; padding-left: 0; }
-
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media screen and (max-width: 600px) {
-  .outnow a { font-size: 1.6rem; }
-  .logo { max-height: 120px; }
-  .content { padding: 0 18px; } /* moins d'espace sur petit écran */
+    .outnow a {
+        font-size: 2rem;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-center {
+        flex-direction: row;
+    }
 }
-
-/* ===== Animations au scroll (fade-in / fade-up) ===== */
-.fade-up, .fade-in {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* petites améliorations visuelles */
-h1 { letter-spacing: 1px; }
-h2 { color: #ddd; margin-top: 8px; }
-
-/* laisse la possibilité d'override par ton ancien css si besoin */
