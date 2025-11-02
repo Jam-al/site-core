@@ -59,7 +59,7 @@
       })();
     </script>
 
-    <section class="newsletter">
+    <section class="newsletter fade-in">
       <h2>Inscris-toi à la newsletter</h2>
       <form id="newsletter-form">
         <input type="email" name="email" id="email" placeholder="Ton adresse e-mail" required>
@@ -67,7 +67,7 @@
         <p id="newsletter-msg"></p>
       </form>
     </section>
-    <footer>
+    <footer class="fade-in">
         <div class="footer-left">
             <p>&copy; 2025 C⨁RE. Tous droits réservés.</p>
         </div>
@@ -81,11 +81,6 @@
 	</div>
     </footer>
 <script>
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value;
-
   fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
     method: 'POST',
     body: new URLSearchParams({ email })
@@ -114,5 +109,6 @@ const observer = new IntersectionObserver(entries => {
 
 fadeElements.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
