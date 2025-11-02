@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CORE — Contact</title>
-  <meta name="description" content="Contactez le groupe CORE pour booking, partenariats ou questions : coremusique92@gmail.com.">
-  <meta property="og:title" content="CORE — Contact">
-  <meta property="og:description" content="Contactez le groupe CORE pour booking, partenariats ou questions : coremusique92@gmail.com.">
-  <meta property="og:image" content="image-site-core/logo/logo-core.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-  <header class="fade-in">
-    <a href="index.html"><img src="image-site-core/logo/logo-core.png" alt="Logo de CORE" class="logo"></a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="musique.html">Musique</a></li>
-        <li><a href="merch.html">Merch</a></li>
-        <li><a href="concerts.html">Concerts</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-        <li><a href="donations.html">Donations</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="content">
+        <header>
+            <a href="index.html"><img src="image-site-core/logo/logo-core.png" alt="Logo de CORE" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+		    <li><a href="musique.html">Musique</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="concerts.html">Concerts</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Contactez-nous</h1>
+            <p>coremusique92@gmail.com</p>
+        </main>
+    </div>
 
-  <main>
-    <section class="fade-up">
-      <h1>Contactez-nous</h1>
-      <p>Pour booking, partenariats ou autres demandes : <a href="mailto:coremusique92@gmail.com">coremusique92@gmail.com</a></p>
-      <p>Tu peux aussi nous écrire via nos réseaux (Instagram / X / YouTube).</p>
-    </section>
+    <script>
+      (function(){
+        const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }); }, {threshold:0.18});
+        document.querySelectorAll('header, main, footer, .newsletter').forEach(el=>{ if(el) io.observe(el); });
+      })();
+    </script>
 
-    <section class="newsletter fade-up">
+    <section class="newsletter">
       <h2>Inscris-toi à la newsletter</h2>
       <form id="newsletter-form">
         <input type="email" name="email" id="email" placeholder="Ton adresse e-mail" required>
@@ -44,38 +45,38 @@
         <p id="newsletter-msg"></p>
       </form>
     </section>
-  </main>
-
-  <footer class="fade-up">
-    <div class="footer-left"><p>&copy; 2025 C⨁RE. Tous droits réservés.</p></div>
-    <div class="footer-center">
-      <a href="https://www.instagram.com/core.musique/" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-insta-blanc.png" alt="Instagram" class="social-icon instagram"></a>
-      <a href="https://x.com/CORE_musique" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-twitter-blanc.png" alt="Twitter" class="social-icon twitter"></a>
-      <a href="https://www.facebook.com/share/1Bhe9NJygt/" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-facebook-blanc.png" alt="Facebook" class="social-icon facebook"></a>
-      <a href="https://www.youtube.com/@c.o.r.e_" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-youtube-blanc.png" alt="YouTube" class="social-icon youtube"></a>
-      <a href="https://discord.gg/3RkhBAC5a6" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-discord-blanc.png" alt="Discord" class="social-icon discord"></a>
-      <a href="https://www.tiktok.com/@core_musique" target="_blank" rel="noopener"><img src="image-site-core/icons/logo-tiktok-blanc.png" alt="TikTok" class="social-icon tiktok"></a>
-    </div>
-  </footer>
-
+    <footer>
+        <div class="footer-left">
+            <p>&copy; 2025 C⨁RE. Tous droits réservés.</p>
+        </div>
+	<div class="footer-center">
+    		<a href="https://www.instagram.com/core.musique/" target="_blank"><img src="image-site-core/icons/logo-insta-blanc.png" alt="Instagram" class="social-icon instagram"></a>
+   		<a href="https://x.com/CORE_musique" target="_blank"><img src="image-site-core/icons/logo-twitter-blanc.png" alt="Twitter" class="social-icon twitter"></a>
+    		<a href=https://www.facebook.com/share/1Bhe9NJygt/" target="_blank"><img src="image-site-core/icons/logo-facebook-blanc.png" alt="Facebook" class="social-icon facebook"></a>
+    		<a href="https://www.youtube.com/@c.o.r.e_" target="_blank"><img src="image-site-core/icons/logo-youtube-blanc.png" alt="YouTube" class="social-icon youtube"></a>
+		<a href="https://discord.gg/3RkhBAC5a6" target="_blank"><img src="image-site-core/icons/logo-discord-blanc.png" alt="Discord" class="social-icon discord"></a>
+		<a href="https://www.tiktok.com/@core_musique?_t=ZN-8vhSBmUMGJu&_r=1" target="_blank"><img src="image-site-core/icons/logo-tiktok-blanc.png" alt="TikTok" class="social-icon tiktok"></a>
+	</div>
+    </footer>
 <script>
-  const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold: 0.2 });
-  document.querySelectorAll('.fade-up, .fade-in').forEach(el => observer.observe(el));
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value;
 
-  document.getElementById('newsletter-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
-      method: 'POST',
-      body: new URLSearchParams({ email })
-    }).then(() => {
-      document.getElementById('newsletter-msg').textContent = "Merci pour ton inscription !";
-      form.reset();
-    }).catch(() => {
-      document.getElementById('newsletter-msg').textContent = "Une erreur est survenue. Réessaie plus tard.";
-    });
+  fetch('https://script.google.com/macros/s/AKfycbwY55AhBz64FDS4-YqN9PPfdkxU27NoDHx_ReugnGFhP7G6UJLc-gwCsnjgQYi7qTi8Xg/exec', {
+    method: 'POST',
+    body: new URLSearchParams({ email })
+  })
+  .then(response => response.text())
+  .then(result => {
+    document.getElementById('newsletter-msg').textContent = "Merci pour ton inscription !";
+    form.reset();
+  })
+  .catch(error => {
+    document.getElementById('newsletter-msg').textContent = "Une erreur est survenue. Réessaie plus tard.";
   });
+});
 </script>
 </body>
 </html>
