@@ -240,7 +240,18 @@ footer {
         text-align: center;
         gap: 20px;
     }
+    
     .footer-center {
         flex-direction: row;
     }
+}
+.donation {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #29C235;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
