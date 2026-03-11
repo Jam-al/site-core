@@ -245,7 +245,7 @@ footer {
         flex-direction: row;
     }
 }
-.donation {
+donation {
     padding: 12px;
     font-size: 16px;
     background-color: #29C235;
